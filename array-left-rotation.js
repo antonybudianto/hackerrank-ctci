@@ -20,10 +20,6 @@ function readLine() {
 
 /////////////// ignore above this line ////////////////////
 
-//5 1
-//1 2 3 4 5
-//2 3 4 5 1
-
 function main() {
     var n_temp = readLine().split(' ');
     var n = parseInt(n_temp[0]);
@@ -34,11 +30,9 @@ function main() {
     var newArr = []
     let s = k % n
     for (let i=0;i<n;i++) {
-        var tmp = i
-        if (i-s < 0) {
-            tmp = n-s+i
-        } else {
-            tmp = i - s
+        var tmp = i - s
+        if (tmp < 0) {
+            tmp += n
         }
         newArr[tmp] = a[i]
     }
